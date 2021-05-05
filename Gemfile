@@ -57,3 +57,7 @@ gem 'pry-rails'
 group :production do
   gem 'rails_12factor'
 end
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'

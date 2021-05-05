@@ -6,12 +6,12 @@ function memo() {
     XHR.open("POST", "/posts", true);
     XHR.responseType = "json";
     XHR.send(formData);
-    XHR.onload = () => {
+    XHR.onload = () => {zz
       const item = XHR.response.post;
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
       const HTML = `
-        <div class="post" data-id=${item.id}>
+        <div class="post" data-id=${item.name}>
           <div class="post-date">
             投稿日時：${item.created_at}
           </div>
@@ -19,7 +19,7 @@ function memo() {
           ${item.content}
           </div>
         </div>`;
-      list.insertAdjacentHTML("afterend", HTML);
+      list.insertAdjacentHTML("beforeend", HTML);
 
       formText.value = "";
 
